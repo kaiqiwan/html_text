@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar導覽列-漢堡選單</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            /* border: 1px solid red; */
+        }
+
+        .contianer {
+            background-color: cadetblue;
+            height: 80px;
+            width: 100vw;
+        }
+
+        .raw {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            /* justify-content: center; */
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid rgb(110, 255, 245); */
+
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid rgb(228, 153, 56); */
+        }
+
+        ul {
+            /* 取消ul預設的內縮及樣式 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+
+        .outer_ul {
+            width: 70%;
+        }
+
+        ul.outer_ul {
+            list-style-type: none;
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: space-around;
+            align-items: center;
+            /* align-content: center; */
+            padding: 0;
+            margin: 0;
+            /* display: none; */
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contianer">
+        <div class="raw">
+            <div class="menu_btn">
+                <div class="line01"></div>
+                <div class="line02"></div>
+                <div class="line03"></div>
+            </div>
+            <div class="logo"><a href=""><img src="./img/logo01.png" alt=""></a></div>
+            <ul class="outer_ul">
+                <li><a href="">about</a>
+                </li>
+                <li class="dropdown"><a href="">about</a>
+                    <ul>
+                        <li><a href="#">Magento與POS訂單系統整合</a>
+                        </li>
+                        <li><a href="#">Magento與CRM客戶管理系統整合</a>
+                        </li>
+                        <li><a href="#">Magento與ERP管理系統整合</a>
+                        </li>
+                        <li><a href="#">Magento金流串接服務</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">about</a>
+                </li>
+                <li><a href="">about</a>
+                </li>
+                <li><a href="">about</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

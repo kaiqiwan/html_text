@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD選單製作</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header {
+            height: 50px;
+            background-color: #fff;
+            position: relative;
+            align-items: center;
+            font-style: normal;
+            font-family: 'Barlow', Arial;
+            font-size: 13px;
+            padding: 20px 0;
+
+            /* justify-content: center; */
+            /* width: 100%;
+            display: flex;
+            justify-content: center; */
+            /* border: 1px solid red; */
+        }
+
+        #menu_control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+
+        .header .logo {
+            width: 40px;
+            height: 40px;
+            /* margin-left: 10px; */
+            position: absolute;
+            left: 10px;
+            display: block;
+        }
+
+        .logo a {
+            display: block;
+            width: 146px;
+
+        }
+
+        .header .logo img {
+            vertical-align: top;
+            /* middle將元素的中間與基線對齊，再加上父對象的x高度的一半。 */
+            align-items: center;
+            display: none;
+            width: 100%;
+            height: 100%;
+            /* transform: translateX(-180%); */
+
+
+        }
+
+        .logo-min {
+            width: 146px;
+            margin: 0 20px;
+        }
+
+        .logo-min img {
+            width: 100%;
+        }
+
+        .header_small-icon {
+            width: 20px;
+            /* padding-top: -10px; */
+            transform: translateY(-35%);
+        }
+
+        .btn_ig {
+            margin-right: -20px;
+        }
+
+        .btn_fb {
+            margin-right: -20px;
+        }
+
+        .btn_ig .btn_fb .btn_tw {}
+
+        .menu_btn {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+
+        .menu_btn span {
+            opacity: 0;
+            /* opacity屬性指定了一個元素的不透明度 */
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+            /* overflow:hidden; //自動隱藏超出的文字或圖片 */
+        }
+
+        /* 漢堡選單的三條線box-shadow製作 */
+        .menu_btn::before {
+            /* ::before 會在物件內容的前方加入資料 */
+            content: "";
+            /* content和"::before"/"::after"是一組的 */
+            position: absolute;
+            height: 2px;
+            width: 35px;
+            right: 2px;
+            background-color: #aaa;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px #aaa, 0px -8px 0px #aaa;
+            /* box-shadow 區塊陰影 */
+            /* box-shadow:x軸,y軸,模糊,色彩 */
+        }
+
+        .nav_banner {
+            /* width: 100%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid red; */
+            width: 50%;
+
+        }
+
+        nav {
+            /* display: none; */
+            width: 80%;
+            height: calc(100vh-50px);
+            /* calc()算術運算式,可加減乘除 */
+            /* calc(100vh-50px) */
+            /* 100vh視窗高度 */
+            background-color: #fff;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            right: -100%;
+            transition: .5s;
+            justify-content: space-around;
+            /* border: 1px solid red; */
+        }
+
+        nav a {
+            display: block;
+            text-decoration: none;
+            /* text-decoration文字修飾 */
+            color: rgb(98, 95, 95);
+            padding: 10px 20px;
+            /* border-bottom: 1px solid rgb(149, 150, 149); */
+        }
+
+        .border {
+            border-bottom: 1px solid rgb(149, 150, 149);
+
+        }
+
+        #menu_control:checked~.header nav {
+            right: 0;
+        }
+
+        hr {
+            display: none;
+        }
+
+        @media screen and (min-width:768px) {
+            .menu_btn {
+                display: none;
+            }
+
+            .logo-min {
+                display: none;
+            }
+
+
+
+            .header {
+                display: flex;
+                justify-content: center;
+                background-color: #fff;
+                align-items: center;
+
+
+            }
+
+            .logo {
+                align-items: center;
+                /* width: 146px; */
+                /* display: block; */
+
+            }
+
+            .header .logo img {
+                /* display: none; */
+                /* transform: translateX(0%); */
+                transform: none;
+                transform: translateX(-180%);
+                display: block;
+                /* border-bottom: none; */
+            }
+
+            .header .logo a {
+                border-bottom: 5px;
+                padding-bottom: 5px;
+                /* margin: 5px; */
+            }
+
+            hr {
+                width: 70%;
+                display: block;
+                margin: 5px auto;
+                /* margin: 10px上下 auto 左右; */
+
+
+            }
+
+            .border {
+                border: none;
+            }
+
+            nav {
+                position: relative;
+                right: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background: transparent;
+                /* 設定在桌機機的時候"導覽列"背景是透明的 */
+                transform: translateX(15%);
+            }
+
+            nav a {
+                /* border-bottom: none; */
+                /* transform: translateX(50%); */
+                /* border-bottom: 5px; */
+                /* padding-bottom: 5px; */
+                /* margin-bottom: 5px; */
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- input:c#menu_control -->
+    <input type="checkbox" name="" id="menu_control">
+
+    <div class="header">
+        <!-- <h1 class="logo">
+            <a href="#"><img src="./html/img/logo_s.svg" alt=""></a>
+        </h1> -->
+
+
+        <!-- 漢堡 -->
+        <!-- label可從遠端去遙控input要不要打勾 -->
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+        <!-- label跟表單有關係 -->
+
+        <!-- nav導覽列 -->
+        <div class="nav_banner">
+            <div class="logo-min">
+                <a href="#"><img src="./html/img/logo_s.svg" alt=""></a>
+            </div>
+            <nav>
+                <div class="logo">
+                    <a href="#"><img src="./html/img/logo_s.svg" alt=""></a>
+                </div>
+                <!-- a[#]{link}*6 -->
+                <a class="border" href="#">ABOUT
+                    <hr>
+                </a>
+                <a class="border" href="#">OEM
+                    <hr>
+                </a>
+                <a class="border" href="#">WORKSHOP
+                    <hr>
+                </a>
+                <a class="border" href="#">PRODUCT
+                    <hr>
+                </a>
+                <a class="border" href="#">NEWS
+                    <hr>
+                </a>
+                <a class="border" href="#">CONTACT
+                    <hr>
+                </a>
+                <a class="border" href="#">ENGLISH
+                    <hr>
+                </a>
+                <!-- <div class="btn"> -->
+                <a class="btn_ig" href="https://www.instagram.com/sakurawaqs/?hl=ja" target="_blank"><img
+                        class="header_small-icon" src="./html/img/btn_ig.svg" alt=""></a>
+                <a class="btn_fb"
+                    href="https://www.facebook.com/%E7%B4%97%E8%94%B5-%E3%81%95%E3%81%8F%E3%82%89-Sakura-636492466462339/?hc_ref=ARRVMbT1vRc48IM84PqX6CeqJhxpv8dODQ97HEh-jZS3kLPhNPUexEzVwFFTVusYZXM&fref=nf"
+                    target="_blank">
+                    <img class="header_small-icon" src="./html/img/btn_fb.svg" alt=""></a>
+                <a class="btn_tw" href="https://twitter.com/wakumayumi" target="_blank"><img class="header_small-icon"
+                        src="./html/img/btn_tw.svg" alt=""></a>
+                <!-- </div> -->
+                <!-- <li class="btn_ig"><a href="https://www.instagram.com/sakurawaqs/?hl=ja" target="_blank">
+                        <img class="header_small-icon" src="html/img/btn_ig.svg" alt="">
+                </li>
+                <li class="btn_fb"><a
+                        href="https://www.facebook.com/%E7%B4%97%E8%94%B5-%E3%81%95%E3%81%8F%E3%82%89-Sakura-636492466462339/?hc_ref=ARRVMbT1vRc48IM84PqX6CeqJhxpv8dODQ97HEh-jZS3kLPhNPUexEzVwFFTVusYZXM&fref=nf"
+                        target="_blank">
+                        <img class="header_small-icon" src="html/img/btn_fb.svg" alt=""></a>
+                </li>
+                <li class="btn_tw"><a href="https://twitter.com/wakumayumi" target="_blank">
+                        <img class="header_small-icon" src="html/img/btn_tw.svg" alt=""></a>
+                </li> -->
+            </nav>
+        </div>
+    </div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        // $('#menu_control)
+        //     .css('left', '0');
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD選單製作</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .header {
+            height: 50px;
+            background-color: rgb(46, 44, 44);
+            position: relative;
+            align-items: center;
+            /* justify-content: center; */
+            /* width: 100%;
+            display: flex;
+            justify-content: center; */
+            /* border: 1px solid red; */
+        }
+
+        #menu_control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+
+        .header .logo {
+            width: 40px;
+            height: 40px;
+            /* margin-left: 10px; */
+            position: absolute;
+            left: 10px;
+        }
+
+        .logo a {
+            display: block;
+            height: 40px;
+        }
+
+        .header .logo img {
+            vertical-align: top;
+            /* middle將元素的中間與基線對齊，再加上父對象的x高度的一半。 */
+            align-items: center;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu_btn {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+
+        .menu_btn span {
+            opacity: 0;
+            /* opacity屬性指定了一個元素的不透明度 */
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+            /* overflow:hidden; //自動隱藏超出的文字或圖片 */
+        }
+
+        /* 漢堡選單的三條線box-shadow製作 */
+        .menu_btn::before {
+            /* ::before 會在物件內容的前方加入資料 */
+            content: "";
+            /* content和"::before"/"::after"是一組的 */
+            position: absolute;
+            height: 2px;
+            width: 35px;
+            right: 2px;
+            background-color: #aaa;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px #aaa, 0px -8px 0px #aaa;
+            /* box-shadow 區塊陰影 */
+            /* box-shadow:x軸,y軸,模糊,色彩 */
+        }
+
+        .nav_banner {
+            /* width: 100%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid red; */
+            width: 60%;
+
+        }
+
+        nav {
+            /* display: none; */
+            width: 80%;
+            height: calc(100vh-50px);
+            /* calc()算術運算式,可加減乘除 */
+            /* calc(100vh-50px) */
+            /* 100vh視窗高度 */
+            background-color: #d3d1d1;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            right: -100%;
+            transition: .5s;
+            justify-content: space-around;
+            /* border: 1px solid red; */
+        }
+
+        nav a {
+            display: block;
+            text-decoration: none;
+            /* text-decoration文字修飾 */
+            color: chartreuse;
+            padding: 10px 20px;
+            border-bottom: 1px solid chartreuse;
+        }
+
+        #menu_control:checked~.header nav {
+            right: 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .menu_btn {
+                display: none;
+            }
+
+            .header {
+                display: flex;
+                justify-content: center;
+                background-color: #d3d1d1;
+                align-items: center;
+
+            }
+
+            .logo {
+                align-items: center;
+
+
+            }
+
+            nav {
+                position: relative;
+                right: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background: transparent;
+                /* 設定在桌機機的時候"導覽列"背景是透明的 */
+            }
+
+            nav a {
+                border-bottom: none;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- input:c#menu_control -->
+    <input type="checkbox" name="" id="menu_control">
+
+    <div class="header">
+        <h1 class="logo">
+            <a href="#"><img src="./img/logo01.png" alt=""></a>
+        </h1>
+
+
+        <!-- 漢堡 -->
+        <!-- label可從遠端去遙控input要不要打勾 -->
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+        <!-- label跟表單有關係 -->
+
+        <!-- nav導覽列 -->
+        <div class="nav_banner">
+            <nav>
+                <!-- a[#]{link}*6 -->
+                <a href="#">ABOUT</a>
+                <a href="#">OEM</a>
+                <a href="#">WORKSHOP</a>
+                <a href="#">PRODUCT</a>
+                <a href="#">NEWS</a>
+                <a href="#">CONTACT</a>
+                <a href="#">ENGLISH</a>
+            </nav>
+        </div>
+    </div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        // $('#menu_control)
+        //     .css('left', '0');
+
+    </script>
+</body>
+
+</html>

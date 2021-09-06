@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD-Late</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            vertical-align: bottom;
+            /* vertical-align: bottom;圖片的基底線下方與文字對齊 */
+        }
+
+        /* 設定各物件的vertical-align屬性, 屬性說明:
+
+        baseline-將支援valign特性的物件的內容與基線對齊
+        sub-垂直對齊文字的下標
+        super-垂直對齊文字的上標
+        top-將支援valign特性的物件的內容與物件頂端對齊
+        text-top-將支援valign特性的物件的文字與物件頂端對齊
+        middle-將支援valign特性的物件的內容與物件中部對齊
+        bottom-將支援valign特性的物件的文字與物件底端對齊
+        text-bottom-將支援valign特性的物件的文字與物件頂端對齊 */
+        .item-group {
+            width: 100%;
+            max-width: 1400px;
+            /* max-width螢幕最大寬度 */
+            margin: 0 auto;
+        }
+
+        .banner img {
+            width: 100%;
+
+        }
+
+        .title {
+            margin: 0 0px 20px;
+            padding: 30px 10px;
+            background-color: #ccc;
+        }
+
+        .title h2 {
+            text-align: center;
+            font-size: 46px;
+        }
+
+        .title p {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .item {
+            margin: 0 10px 40px;
+        }
+
+        .item .text h3 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .item .pic img {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0px;
+            /* padding:上下,左右 */
+        }
+
+        .service {
+            /* padding: 60px 0; */
+            margin: 60px 0;
+            background-color: #ffa;
+        }
+
+        .service .item {
+            margin: 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .item-group {
+                display: flex;
+            }
+
+            .service .item .pic,
+            .service .item .text {
+                width: 50%;
+                margin: 0;
+            }
+
+            .service .item {
+                display: flex;
+            }
+
+            .service .item .text {
+                display: flex;
+                flex-direction: column;
+                /* flex-direction: column;讓主軸旋轉為垂直方向 */
+                justify-content: center;
+                /* justify-content: center;主軸的對其方式為置中 */
+                padding: 0 20px;
+                box-sizing: border-box;
+                /* box-sizing: border-box;
+                盒模型尺寸:用於如果DIV多了"border或padding",
+                自行手動改又很麻煩,這時就可直接下"box-sizing: border-box;"
+                來解決,並符合實際登打的寬跟高尺寸*/
+            }
+        }
+
+        /* ----------------------------動畫------------------------------ */
+        /* img的父層下background-color: #000;透明遮罩 */
+        .block01 {
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .block01:hover {
+            /* background-color: #000; */
+            /* transform: scale(1.1); */
+            /* opacity: .5; */
+        }
+
+        /* 在img上opacity: 1; */
+        .enlarge {
+            /* background-color: #000; */
+            opacity: 1;
+            transition: .5s;
+        }
+
+        .enlarge:hover {
+            /* background-color: #000; */
+            transform: scale(1.1);
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <img src="./img/mv_bg_03_asahikawa.jpg" alt="">
+    </div>
+
+    <div class="about">
+        <div class="wrap">
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero libero, perferendis placeat natus quo
+                    suscipit! Delectus accusamus aliquam nesciunt reiciendis!</p>
+            </div>
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic block01">
+                        <img class="enlarge" src="./img/thum_0001_01_maruko_main2.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic block01">
+                        <img class="enlarge" src="./img/thum_0003_01_hamanasu_main2.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic block01">
+                        <img class="enlarge" src="./img/thum_0004_01_nihonsyoyu_main2.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="service">
+        <div class="wrap">
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="./img/safe_image.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="about">
+        <div class="wrap">
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero libero, perferendis placeat natus quo
+                    suscipit! Delectus accusamus aliquam nesciunt reiciendis!</p>
+            </div>
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="./img/togo_asahikawa_img_01.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="./img/togo_asahikawa_img_02.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="./img/togo_asahikawa_img_03.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="./img/togo_asahikawa_img_04.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>title</h3>
+                        <p>操作系統方向這就是群發所有不行人才警察供應商達到，公共最終事情相關圖片提出了國產陽明山美好，一顆一遍，提交這位二手，都。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <p>© HOKKAIDO TO GO PROJECT</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”author” content=”//www.jb51.net/” />
+    <title>CSS如何實現彈出一個全屏灰黑色透明遮罩效果-指令碼之家</title>
+    <style type=”text/css”>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .zhezhao {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .login {
+            width: 280px;
+            height: 180px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            background-color: #000;
+            margin-left: -140px;
+            display: none;
+            z-index: 1500;
+        }
+
+        .content {
+            margin-top: 50px;
+            color: red;
+            line-height: 200px;
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class=”zhezhao” id=”zhezhao”></div>
+    <div class=”login” id=”login”><button id=”btclose”>點選關閉</button></div>
+    <div class=”content”>指令碼之家歡迎您，<button id=”bt”>點選彈出遮罩</button></div>
+    <script type=”text/javascript”>
+        window.onload=function()
+        {
+        var zhezhao=document.getElementById(“zhezhao”);
+        var login=document.getElementById(“login”);
+        var bt=document.getElementById(“bt”);
+        var btclose=document.getElementById(“btclose”);
+        
+        bt.onclick=function()
+        {
+        zhezhao.style.display=”block”;
+        login.style.display=”block”;
+        }
+        btclose.onclick=function()
+        {
+        zhezhao.style.display=”none”;
+        login.style.display=”none”; 
+        }
+        }
+    </script>
+</body>
+
+</html>

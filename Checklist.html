@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁清單樣式</title>
+    <!-- 希臘文 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- -------- -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <style>
+        .box {
+            border-style: solid;
+            width: 600px;
+        }
+
+        li {
+            height: 30px;
+            border: 1px solid #ee1b96;
+            margin: 5px;
+        }
+
+        .Mydashed {
+            border: 1px dashed #ccc;
+
+        }
+
+        .mark1-none {
+            list-style-type: none;
+        }
+
+        .mark1-disc {
+            list-style-type: disc;
+        }
+
+        .mark1-circle {
+            list-style-type: circle;
+        }
+
+        .mark1-square {
+            list-style-type: square;
+        }
+
+        /* ///----------------// */
+
+
+        /* 阿拉伯數字(十進制前置零) */
+        .mark1--decimal-leading-zero {
+            list-style-type: decimal-leading-zero;
+        }
+
+        .mark1--decimal {
+            list-style-type: decimal;
+        }
+
+        /* 拉丁文 */
+        .mark1--upper-latin {
+            list-style-type: upper-latin;
+        }
+
+        .mark1--lower-latin {
+            list-style-type: lower-latin;
+        }
+
+        /* 羅馬文 */
+        .mark1--upper-roman {
+            list-style-type: upper-roman;
+        }
+
+        .mark1--lower-roman {
+            list-style-type: lower-roman;
+        }
+
+        /* 英文字母 */
+        .mark1--upper-alpha {
+            list-style-type: upper-alpha;
+            font-family: 'GFS Neohellenic', sans-serif;
+            /* font-family: 'Hachi Maru Pop', cursive; */
+
+        }
+
+        .mark1--lower-alpha {
+            list-style-type: lower-alpha;
+            /* font-family: 'GFS Neohellenic', sans-serif; */
+            /* font-family: 'Hachi Maru Pop', cursive; */
+        }
+
+        /* 希臘文 */
+        .mark1--lower-greek {
+            list-style-type: lower-greek;
+            /* font-family: 'GFS Neohellenic', sans-serif; */
+            /* font-family: 'Hachi Maru Pop', cursive; */
+        }
+
+        /* 亞美尼亞 */
+        .mark1-armenian {
+            list-style-type: armenian;
+        }
+
+        /* 格魯吉亞語 */
+        .mark1-georgian {
+            list-style-type: georgian;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>list-style-type屬性是用來設定在清單中，每一條之前的記號要用什麼</h2>
+    <ul class="box mark1-none">list-style-type: none;(沒有)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1-disc">list-style-type: disc;(全黑圓圈)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1-circle">list-style-type: circle;(空心圓圈)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1-square">list-style-type: square;(正方形)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- ///---------------------------------------------/// -->
+    <br>
+    <hr class="Mydashed">
+
+    <ul class="box mark1--decimal-leading-zero">list-style-type:decimal-leading-zero;(阿拉伯數字/十進制前置零)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--decimal">list-style-type:decimal;(阿拉伯數字)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--upper-latin">list-style-type:upper-latin;(大寫拉丁文)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--lower-latin">list-style-type:lower-latin;(小寫拉丁文)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--upper-roman">list-style-type:upper-roman;(大寫羅馬文)
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--lower-roman">list-style-type:lower-roman;(小寫羅馬文)
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--upper-alpha">list-style-type:upper-alpha;(大寫英文字母 )
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+    <ul class="box mark1--lower-alpha">list-style-type:lower-alpha;(小寫英文字母 )
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1--lower-greek">list-style-type:lower-greek;(希臘文 )
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1-armenian">list-style-type:armenian;(亞美尼亞文 )
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="box mark1-georgian">list-style-type:georgian;(格魯吉亞語 )
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <br><br>
+    <hr>
+    <!--        /--------------------------------------------/        -->
+    <br><br>
+
+    <h2>list-style-position屬性讓我們可以決定記號是否應該被視為是文字的一部份，
+        並且由此而決定記號的位置</h2>
+    <ul class="box mark2">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <hr>
+    <br><br>
+    <!--        /--------------------------------------------/        -->
+    <br><br>
+    <h2>list-style-image屬性是用來將某個圖案設定為記號</h2>
+    <ul class="box mark3">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <hr>
+    <br><br>
+    <!--        /--------------------------------------------/        -->
+    <br><br>
+    <h2>list-style以上提到的這三個 (list-style-style、list-style-position、及 list-style-image)
+        屬性可以被簡化為一個 list-style屬性</h2>
+    <ul class="box mark4">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+
+
+
+
+
+</body>
+
+</html>

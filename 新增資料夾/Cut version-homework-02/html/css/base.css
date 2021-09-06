@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* ------------------------------------- BASIC
+*/
+@import "reset.css";
+
+@import url(//fonts.googleapis.com/css?family=Barlow|Vollkorn);
+
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+html,body {
+    min-height: 100%;
+}
+body {
+  font-family: 'Noto Sans Japanese','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W6', Meiryo, メイリオ, Osaka, 'MS PGothic' , sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height:1.6;
+  background:#fff;
+  color:#000;
+  -webkit-text-size-adjust: 100%;
+}
+.serif {
+ font-family: 游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+}
+.sans {
+  font-family: helvetica, arial, 'Noto Sans Japanese','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W6', Meiryo, メイリオ, Osaka, 'MS PGothic' , sans-serif;
+}
+.font_barlow {
+	font-family: 'Barlow', sans-serif;
+}
+.font_vollkorn {
+	font-family: 'Vollkorn', serif;
+}
+.clr {
+  clear: both;
+}
+
+.jump {
+  position: absolute;
+  left: -1999px;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+a {
+  text-decoration:none;
+}
+
+
+img.alignleft {
+  float:left;
+  margin:0 10px 10px 0;
+}
+img.alignright {
+  float:right;
+  margin:0 0 10px 10px;
+}
+div.imagesalignleft {
+  float:left;
+}
+div.imagesalignright {
+  float:right;
+}
+div.imagesalignleft img {
+  margin-right:10px;
+  margin-bottom:10px;
+}
+div.imagesalignright img{
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+img {
+	vertical-align:bottom;
+}
+sup {
+	font-size:smaller;
+	vertical-align:top;
+}
+span.small {
+	font-size:smaller;
+}
+.alignright {
+	text-align:right;
+}
+.aligncenter {
+	text-align:center;
+}
+.hidden {
+	display:none;
+}
+/* ------------------------------------- clearfix
+*/
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}

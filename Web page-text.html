@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>position的relative與absolute屬性</title>
+    <style>
+        body {
+            background-color: khaki;
+            font-family: Helvetica;
+        }
+
+        .box-before {
+            width: 300px;
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            background-color: #2e5ec0;
+            /*  position: static;
+                top: 20px;  
+
+            static :這代表元素會被放在預設的地方。
+            如果 position 的值是被設定為 statics 的話，
+            那 top、bottom、left、和 right 的值就都沒有意義了。*/
+        }
+
+        .box-1 {
+            width: 300px;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+            background-color: #fd3c40;
+            box-sizing: border-box;
+            position: relative;
+            top: 30px;
+            left: 20px;
+        }
+
+        .box-2 {
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            background-color: #8c4fb6;
+            /* position: relative;
+            top: 30px;
+            left: 20px; */
+            position: absolute;
+            top: 30px;
+            left: 20px;
+
+        }
+
+
+
+        .box-3 {
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            background-color: #00b842;
+        }
+
+        .box-after {
+            width: 300px;
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            background-color: #faaa20;
+        }
+
+        /* 行內元素Inline1 */
+        .Inline1 {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            top: 30px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <!-- position的relative與absolute屬性 -->
+    <div class="box-before">
+        box-before
+    </div>
+    <div class="box-1">
+        box-1
+        <div class="box-2">
+            <p class="Inline1">box-2</p>
+        </div>
+        <div class="box-3">
+            box-3
+        </div>
+    </div>
+    <div class="box-after">
+        box-after
+    </div>
+
+
+
+</body>
+
+</html>

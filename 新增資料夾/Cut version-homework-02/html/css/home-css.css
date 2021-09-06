@@ -1,0 +1,874 @@
+body {
+    /* font-family: 'Barlow',Arial, Helvetica, sans-serif,'Noto Serif JP', serif,"Noto Sans Japanese","Hiragino Kaku Gothic ProN", 
+    "ヒラギノ角ゴ ProN W6, Meiryo, メイリオ, Osaka, MS PGothic , sans-serif"; */
+    font-style: normal;
+    /* background-color: rgba(140, 207, 145, 0.87); */
+}
+
+/* ----------////header///-----------------  */
+hr{
+   width:80% ;
+   size:3px; 
+   color:#5151A2;　
+   filter:"progid:DXImageTransform.Microsoft.Glow(color=#5151A2,strength=10)";
+   margin: 5px;
+   padding: 0;
+}
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    /* margin: 0;
+    padding: 0; */
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    /* vertical-align: baseline; */
+    display: flex;
+    /* display: flex;水平橫向 */
+    align-items: center;
+    /* align-items: center;垂直置中 */
+}
+.header_black-logo{
+    /* margin-left: 23.25%; */
+    margin-right: 9%;
+    transform: translateY(-7px);
+}
+.container01{
+    transform: translateX(6%);
+    font-size: 13px;
+    text-align: center;
+    /* padding-top: 15px; */
+    margin-top: 10px;
+}
+.m02{
+    margin-left: 52px;
+    margin-right: 20px;
+}
+.header_small-icon{
+    width: 20px;
+    padding-top:5px;
+}
+.btn_ig{
+    margin-right: 20px;
+}
+.btn_fb{
+    margin-right: 20px;
+}
+.nav-link{
+    font-family: 'Barlow',Arial;
+}
+
+/* flex-flow屬性是flex-direction和flex-wrap屬性的複合屬性。
+
+flex-flow屬性用於設置或檢索彈性盒模型對象的子元素劃分方式。
+
+flex-direction屬性規定靈活項目的方向。
+
+flex-wrap屬性規定靈活項目是否拆行或拆列。
+
+注意：如果元素不是彈性盒對象的元素，則flex-flow屬性不起作用。 */
+
+/* flex-flow屬性的值:的值:
+nowrap	默认值。规定灵活的项目不拆行或不拆列。
+wrap	规定灵活的项目在必要的时候拆行或拆列。
+wrap-reverse	规定灵活的项目在必要的时候拆行或拆列，但是以相反的顺序。
+initial	设置该属性为它的默认值。请参阅 initial。
+inherit	从父元素继承该属性。请参阅 inherit。 */
+
+
+/* row	默认值。灵活的项目将水平显示，正如一个行一样。	
+row-reverse	与 row 相同，但是以相反的顺序。	
+column	灵活的项目将垂直显示，正如一个列一样。	
+column-reverse	与 column 相同，但是以相反的顺序。	
+initial	设置该属性为它的默认值。请参阅 initial。	
+inherit	从父元素继承该属性。请参阅 inherit。 */
+.navbar{
+    width: 100%;
+    padding: 0;
+    line-height: 1.5;
+
+}
+/* .header-bg{
+    background-color: #fff;
+} */
+/* home complete(header) */
+
+/* ----------////header-換圖輪播///----------------- */
+.Change-picture{
+    position: relative;
+    padding-top: 80px;
+
+}
+.Change-picture .carousel-inner{
+    display: block;
+}
+
+.Change-picture .header-img-max{
+    display:none;
+}
+ /* ---arrow箭頭-----  */
+.transition_arrow{
+    position: absolute;
+    z-index: 10;
+    outline: 0;
+    /* outline:輪廓線顏色 輪廓線樣式 輪廓線粗細; */
+    vertical-align: baseline;
+    /* vertical-align指定行內元素（內聯）或表格單元格（table-cell）元素的垂直對齊方式。 */
+
+    /* background:transparent;圖片背景消除 */
+    /* opacity: 0.5;透明圖像(該opacity屬性的取值範圍為0.0-1.0) */
+    top: 80%;
+    left: 50%;/* 堆50%父層 */
+    transform: translateX(-50%);/* 回來50%自己 */
+    
+}
+.transition_arrow:hover{
+    top: 95%;
+    left: 50%;
+}
+.visual_arrow{
+
+    transition:cubic-bezier(.18,.81,.9,.49);
+    transition-duration: 0.3s;
+}
+.visual_logo{
+    display:block;
+    width: 317px;
+    height: 143px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;/* 堆50%父層 */
+    transform: translate(-50%,-50%);/* 回來50%自己 */
+    
+    
+}
+.visual_logo img{
+    width: 317px;
+    height: 143px;
+}
+
+/* header > .sticky > .inner {
+    width: 900px;
+    margin: auto;
+    padding-top: 30px;
+    height: 50px;
+    transition-property: padding-top,height;
+    transition-duration: 0.3s;
+     */
+
+     
+ /* ----------////第一個段落///-----------------  */
+.container02{
+    width: 49%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 690px;
+    display: flex;
+    /* display: flex;水平橫向 */
+    align-items: center;
+    /* align-items: center;垂直置中 */
+    font-family:  Helvetica, sans-serif,'Noto Serif JP', serif,"Noto Sans Japanese","Hiragino Kaku Gothic ProN", 
+    "ヒラギノ角ゴ ProN W6, Meiryo, メイリオ, Osaka, MS PGothic , sans-serif";
+}
+.section01{
+    transition-property: opacity;
+    /* padding-top: 60px; */
+    /* margin-bottom: 50px; */
+}
+.inner{
+    text-align: center;
+}
+.section01-h1{
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    /* letter-spacing 字元間距控制 (每個字之間的距離控制)
+    word-spacing 單字間距控制 (每個單字之間空白區的大小控制)
+    white-space 空白區域處理 */
+}
+.section-p{
+    transition-duration: 0.7s;
+    opacity: 1.0;
+    display: block;
+    /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    line-height: 1.9;
+    text-align:left;
+}
+/* ----------////第二個段落///----------------- */
+#section_product{
+    width: 100%;
+    /* height: 250px; */
+    /* display: block; */
+    font-family: 'Barlow',Arial, Helvetica;
+    
+    
+}
+#section_product .Block02{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 120px;
+}
+.Block02{
+    object-fit: cover;
+    display: block;
+    
+}
+.Block02-max{
+    display: none;
+}
+.section02_body{
+    height: 780px;
+   
+}
+.section02_p{
+    font-size: 35px;
+    text-align:center;
+    margin-bottom: 50px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    /* font-weight: normal;文字最細版 */
+}
+.section02_ul{
+    list-style: none;
+    /* width: 924px; */
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content:center; */
+    align-content:center;
+    justify-content:space-between;
+    /* display: block; */
+    /* display: inline-block; */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap;決定超過容器寬度的時候是否要換行。 */
+    padding-bottom: 50px;
+
+}
+.section02_ul figure{
+    margin: 0 0 1rem;
+}
+.section02_ul .section02_img{
+    /* width: 268px;
+    height: 230px; */
+    w
+    display: block;
+    flex-shrink:1;
+    /* grid-template-columns: repeat(auto-fit,mimax(16.75rem.1fr)); */
+
+}
+
+/* column-count: 4; */
+ /* column-count自動切割 */
+.section02_button{
+    border: 1px solid #000;
+    /* display:block;　 */
+    /* display:block;元素的顯示型態被設定為區塊元素。 */
+    background-color: #fff;
+    text-align: center;
+    /* text-align: center;文字置中 */
+    font-size: 0.9375rem;
+    padding: 1.2em 0;
+    /* padding內距 */
+    /* width: 864px; */
+    width: 100%;
+    height: 56.4px;
+    margin: 0 auto;
+    /* margin: 0 auto;區塊置中 */
+   
+}
+/* ----------////第三個段落///----------------- */
+#section03_news{
+    /* display:block; */
+
+}
+#section03_news .section03_body{
+    /* transform: translate(47%,1000px); */
+    position: relative;
+    margin-bottom: 90px;
+    margin-top: 120px;
+  
+}
+.section03_body .border_solid{
+    /* background: url(./img/border-solid02.png) center center repeat-x;
+    text-align:center; */
+    z-index: -500;
+    width: 100%;
+    /* display:inline-block;行內元素 */
+	/* background-color:#fff; */
+	/* padding:0px 2em; */
+    /* display:inline-block; */
+    border-bottom: 1px solid #000;
+    position: absolute;
+    /* bottom: 22px; */
+    top: 25px;
+    /* border-collapse: collapse; */
+    /* border-collapse:collapse; //邊框合併為單一邊框 */
+    /* transform: translate(0%,935px); */
+    
+    
+    /* position: absolute; */
+    /* top: 500px; */
+    /* z-index: -500; */
+}
+.section03_body .section03_h1{
+    background-color: #fff;
+    width: 210px;
+    text-align: center;
+    z-index: 800;
+    margin: 0 auto;
+    font-family: 'Barlow', sans-serif;
+    font-weight:300px;
+    font-size: 35px;
+    /* font-weight文字粗細 */
+    /* transform: translateX(10px); */
+ 
+
+    /* transform: translateY(2000%); */
+
+}
+#section03_news .font_vollkorn{
+    list-style-type: none;
+    /* list-style-type: none; 取消ul的li裡的點點去掉 */
+    display: flex;
+    
+    /* justify-content:center; */
+}
+#section03_news .font_vollkorn li{
+    margin: 0 auto;
+    text-align: center;
+    line-height: 65.6px;
+    /* text-align: center;+line-height行高跟DIV高度一樣=>自然就會在盒子的正中央了 */
+    font-size: 22px;
+}
+
+#section03_news .fadeblock{
+    /* width: 33.3333%; */
+    width: 240px;
+    height: 65.6px;
+    background-color: black;
+    /* margin:3rem; */
+    /* border-radius: 10px 10px 10px 10px; */
+
+}
+#section03_news .fadeblock span{
+    color: #fff;
+    font-family: 'Vollkorn', serif;  
+}
+#section03_news .section03_text{
+    text-align: center;
+    margin-top: 35px;
+    
+}
+
+/* ----------////第四個段落///----------------- */
+
+#section_oem{
+    /* margin: 0 auto; */
+    
+}
+#section_oem .section04_header{
+
+}
+/* ------------01 */
+#section_oem .section04_body01{
+    display: flex;
+    justify-content:center;
+    /* justify-content:center;區塊元素置中排列 */
+    /* align-content: flex-end; */
+    
+}
+#section_oem .section04_body01 .border_solid04{
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+    transform: translateY(-10px);
+
+
+}
+#section_oem .section04_body01 .section04_taxt01{
+    width: 405px;
+    height: 303px;
+    
+   
+    
+}
+.section04_taxt01-h1-max{
+    display: none;
+}
+#section_oem .section04_body01 .section04_taxt01 .section04_taxt01-h1{
+    transform: translateY(-10px);
+    font-style: normal;
+    font-weight: 350;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    /* letter-spacing字母間距 */
+}
+#section_oem .section04_body01 .section04_taxt01 .btn_more{
+    text-align: center;
+    border: 1px solid rgb(85, 85, 85);
+    width: 405px;
+    height: 52.4px;
+    margin-top: 36px;
+    
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* align-content: space-between; */
+    
+}
+#section_oem .section04_body01 .section04_taxt01 .btn_more span{
+    line-height: 52.4px;
+    
+}
+#section_oem .section04_body01 .section04_taxt01 .section04_taxt01-p{
+    /* width: 464px; */
+    /* width: 365px; */
+    line-height: 1.6;
+    font-style: normal;
+    font-weight: 200;
+    font-family:  Helvetica, sans-serif,'Noto Serif JP', serif,"Noto Sans Japanese","Hiragino Kaku Gothic ProN", 
+    "ヒラギノ角ゴ ProN W6, Meiryo, メイリオ, Osaka, MS PGothic , sans-serif";
+    transform: translateY(-15px);
+    text-align: justify;
+    /* text-align:justify; //使左右對齊本文 */
+    text-justify:inter-ideograph;
+    /* text-justify:inter-ideograph;自動算"字跟字" 中間的空隙 來排齊內容。 */
+}
+#section_oem .section04_body01 .section04_img{
+    display: block;
+    margin-right: 50px;
+}
+#section_oem .Block03{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 170px;
+}
+.Block03{
+    object-fit: cover;
+    /* object-fit: cover;保持比例，以填滿空間沒有空白為主 */
+    display: block;
+    /* display: block;把此元素改成 區塊元素 */
+    margin-top: 80px;
+
+    
+}
+
+/* ------------02 */
+#section_oem .section04_body02{
+    display: flex;
+    justify-content:center;
+    /* justify-content:center;區塊元素置中排列 */
+    /* align-content: flex-end; */
+    margin-top: 132px;
+    
+}
+#section_oem .section04_body02 .border_solid04{
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+    transform: translateY(-10px);
+
+
+}
+#section_oem .section04_body02 .section04_taxt02{
+    width: 405px;
+    height: 303px;
+    
+   
+    
+}
+.section04_taxt02-h1-max{
+    display: none;
+}
+#section_oem .section04_body02 .section04_taxt02 .section04_taxt02-h1{
+    transform: translateY(-10px);
+    font-style: normal;
+    font-weight: 350;
+    font-size: 30px;
+    letter-spacing: 0.1em;
+}
+#section_oem .section04_body02 .section04_taxt02 .btn_more{
+    text-align: center;
+    border: 1px solid rgb(85, 85, 85);
+    width: 405px;
+    height: 52.4px;
+    margin-top: 36px;
+    
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* align-content: space-between; */
+    
+}
+#section_oem .section04_body02 .section04_taxt02 .btn_more span{
+    line-height: 52.4px;
+    
+}
+#section_oem .section04_body02 .section04_taxt02 .section04_taxt02-p{
+    /* width: 464px; */
+    /* width: 365px; */
+    line-height: 1.6;
+    font-style: normal;
+    font-weight: 200;
+    font-family:  Helvetica, sans-serif,'Noto Serif JP', serif,"Noto Sans Japanese","Hiragino Kaku Gothic ProN", 
+    "ヒラギノ角ゴ ProN W6, Meiryo, メイリオ, Osaka, MS PGothic , sans-serif";
+    transform: translateY(-15px);
+    text-align: justify;
+    /* text-align:justify; //使左右對齊本文 */
+    text-justify:inter-ideograph;
+    /* text-justify:inter-ideograph;自動算"字跟字" 中間的空隙 來排齊內容。 */
+}
+#section_oem .section04_body02 .section04_img{
+    display: block;
+    margin-right: 50px;
+}
+#section_oem .Block03{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 170px;
+}
+.Block03{
+    object-fit: cover;
+    /* object-fit: cover;保持比例，以填滿空間沒有空白為主 */
+    display: block;
+    /* display: block;把此元素改成 區塊元素 */
+    margin-top: 80px;
+
+    
+}
+/* -----------footer---------- */
+.footer_header{
+    margin-top: 135px;
+}
+
+#footer_body .footer_li span{
+    font-size: 12px;
+    text-align: center;
+    /* display: flex; */
+
+}
+.footer_header .font_barlow{
+    font-size: 12px;
+    text-align: center;
+
+}
+#footer_body ul li{
+    list-style: none;
+    margin: 0 15px 0;
+}
+#footer_body ul{
+    display: flex;
+    justify-content:center;
+}
+
+/* .footer02{
+    display: none;
+} */
+/* -----------響應式網站------------------ */
+@media screen and (max-width: 376px){
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .header_black-logo{
+
+    }
+    #section_product.section02_ul{
+        /* float:none; */
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    #section_oem .section04_body01{
+        /* float:none; */
+        flex-wrap: wrap;
+    }
+    #section_oem .section04_body02{
+        /* float:none; */
+        flex-wrap: wrap;
+    }
+    #section_product{
+        flex-wrap: wrap;
+    }
+    /* ----------////header-修改///----------------- */
+
+
+
+
+
+
+
+
+
+    /* ----------////header-換圖輪播-修改///----------------- */
+    .Change-picture{
+        /* width: 100px;
+        height: 100%; */
+    }
+    .Change-picture .header-img-max{
+        
+        display: block;
+
+
+        
+    }
+    
+    .Change-picture .header-img-max img{
+        width: 100%;
+        height: 100%;
+    }
+    .Change-picture .carousel-inner{
+        display: none;
+    }
+
+
+
+
+
+
+
+
+    /* ----------////第一個段落-小文修改///----------------- */
+    .container02{
+        width: 90%;
+    }
+
+
+
+
+
+
+
+    /* ----------////第二個段落-PRODUCT修改///----------------- */
+    #section_product{
+        
+    }
+    #section_product .Block02{
+        display: none;
+    }
+    #section_product .section02_body{
+        height: 650px;
+    }
+    .Block02-max{
+        display: block;
+    }
+    .Block02-max img{
+        width: 100%;
+    }
+     .section02_body .section02_p{
+
+    }
+     .section02_body .section02_ul{
+        width: 80%;
+    }
+    .section02_ul figure{
+        width: 40%;
+        margin: 0 0 2rem;
+    }
+   .section02_body .section02_ul .section02_img{
+        /* width: 50%; */
+        width: 100%;
+        
+    }
+   
+    .section02_body .section02_ul figcaption{
+
+    }
+     .section02_body .section02_button{
+
+    }
+    .section02_body .section02_button span{
+
+    }
+    
+
+
+
+
+
+    /* ----------////第三個段落-NEWS修改///----------------- */
+    #section03_news{
+        
+    }
+  
+    #section03_news .font_vollkorn{
+        justify-content:center;
+        flex-direction:column;
+        
+    }
+    #section03_news .font_vollkorn .fadeblock{
+        margin-bottom: 25px; 
+        width: 90%;
+        font-size: 25px;
+
+    }
+    #section03_news .section03_text{
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    /* ----------////第四個段落-OEM修改///----------------- */
+    #section_oem{
+        
+    }
+    /* -----第四個段落-section04_body01--- */
+    #section_oem .section04_body01{
+        flex-direction:column;
+        /* justify-content:center; */
+        /* margin: 0 auto; */
+    }
+    #section_oem .section04_body01 .section04_img{
+        /* margin-right:  */
+        margin: auto;
+        margin-bottom: 40px;
+        width: 90%;
+        /* height: 303px; */
+    }
+
+    #section_oem .section04_body01 .section04_taxt01{
+        /* position: relative; */
+        margin: auto;
+        width: 90%;
+    }
+    #section_oem .section04_body01 .section04_taxt01 .btn_more{
+        width: 100%;
+        height: 80px;
+    }
+    #section_oem .section04_body01 .section04_taxt01 .btn_more span{
+          line-height: 80px;
+          font-size: 24px;
+    }
+    #section_oem .section04_body01 .section04_taxt01 .section04_taxt01-p{
+        
+        transform:none;
+    }
+    #section_oem .section04_body01 .section04_taxt01 .border_solid04{
+        border: none;
+    }
+    #section_oem .section04_body01 .section04_taxt01 .section04_taxt01-h1{
+        /* transform:none;
+        text-align: center;
+        position: absolute;
+        right: 50%;
+        bottom: 220%; */
+        display: none;
+        
+        
+
+    }
+    #section_oem .section04_body01 .section04_taxt01-h1-max{
+        display: inline-block;
+        text-align: center;
+        font-style: normal;
+        font-weight:350;
+        /* font-weight設定字體粗細 */
+    }
+     /* -----第四個段落-section04_body02--- */
+    #section_oem .section04_body02{
+        flex-direction:column;
+    }
+    #section_oem .section04_body02 .section04_img{
+        margin: auto;
+        margin-bottom: 40px;
+        width: 90%;
+    }
+    #section_oem .section04_body02 .section04_taxt02{
+        margin: auto;
+        width: 90%;
+    }
+    #section_oem .section04_body02 .section04_taxt02 .section04_taxt02-h1{
+        display: none;
+    }
+    #section_oem .section04_body02 .section04_taxt02-h1-max{
+        display: inline-block;
+        text-align: center;
+        font-style: normal;
+        font-weight:350;
+        /* font-weight設定字體粗細 */
+    }
+    #section_oem .section04_body02 .section04_taxt02 .border_solid04{
+        border: none;
+    }
+    #section_oem .section04_body02 .section04_taxt02 .section04_taxt02-p{
+        
+    }
+    #section_oem .section04_body02 .section04_taxt02 .btn_more{
+        width: 100%;
+        height: 80px;
+
+    }
+    #section_oem .section04_body02 .section04_taxt02 .btn_more span{
+        line-height: 80px;
+        font-size: 24px;
+
+    }
+
+
+
+   
+    /* -----------footer修改----------- */
+    .footer_header{
+        
+    }
+   
+    .footer_header #footer_body{
+        margin-top: 50px;
+    }
+    #footer_body ul{
+        display: flex;
+        justify-content:center;
+        flex-direction:column;
+    }
+    #footer_body ul .footer_li{
+       /* border-top-style:1px solid  */
+       /* border: solid; */
+       border-style: solid none none ;
+       border-color: #ccc;
+       padding: 1em 0;;
+       text-align: center;
+      
+
+    }
+    .footer_li-bottom{
+        padding: 1em 0;
+        text-align: center;
+        border-style: solid none solid;
+        border-color: #ccc;
+    }
+    #footer_body .footer_li span{
+       font-size: 16px;
+    }
+   /* padding: 1em 0; */
+   
+   .footer_header .font_barlow{
+       font-size: 16px;
+   }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

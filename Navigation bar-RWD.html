@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar導覽列-漢堡選單</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            /* border: 1px solid red; */
+        }
+
+        .contianer {
+            background-color: cadetblue;
+            height: 80px;
+            width: 100vw;
+            /* overflow: hidden; */
+            /* border: 1px solid rgb(255, 0, 0); */
+
+
+        }
+
+        .raw {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            /* justify-content: center; */
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid rgb(110, 255, 245); */
+
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid rgb(228, 153, 56); */
+        }
+
+        ul {
+            /* 取消ul預設的內縮及樣式 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+
+        .outer_ul {
+            width: 70%;
+        }
+
+        ul.outer_ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+
+
+        }
+
+        ul.outer_ul li {
+            position: relative;
+            white-space: nowrap;
+
+
+
+            /* white-space 屬性決定如何處理元素內的空白字元:nowrap強制不換行 */
+            /* border-right: #ccc 1px solid; */
+        }
+
+        ul.outer_ul>li:last-child {
+            /* border-right: none; */
+            /* :last-child最後一個孩子 */
+        }
+
+        ul.outer_ul>li {
+            float: left;
+            /* 只有第一層是靠左對齊*/
+        }
+
+        ul.outer_ul a {
+
+            text-decoration: none;
+            /* text-decoration文字特效參數:none預設值，不顯示任何文字特效 */
+            display: block;
+            line-height: 40px;
+        }
+
+        ul.outer_ul a:hover {
+            /* 滑鼠滑入按鈕變色*/
+            /* background-color: #ef5c28; */
+            /* color: #fff; */
+        }
+
+        ul.outer_ul li:hover>a {
+            /* 滑鼠移入次選單上層按鈕保持變色*/
+            /* background-color: #ef5c28; */
+            /* color: #fff; */
+        }
+
+        ul.outer_ul ul {
+
+            background-color: rgb(110, 178, 181);
+            position: absolute;
+            z-index: 99;
+
+            min-width: 180px;
+            /* min-width網頁元素的最小寬度 */
+            padding: 0 20px;
+            top: 60px;
+            pointer-events: auto;
+
+            /*隱藏次選單*/
+            /* left: 1000px; */
+            opacity: 0;
+            -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+
+        }
+
+        ul.outer_ul ul li {
+            border-bottom: #ccc 1px solid;
+        }
+
+        ul.outer_ul ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul.outer_ul li:hover>ul {
+            /* 滑鼠滑入展開次選單*/
+            opacity: 1;
+            -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+            left: -1px;
+
+        }
+
+
+        .menu_btn {
+            display: none;
+            border: 1px solid rgb(156, 26, 186);
+        }
+
+        .menu_btn {
+
+            width: 30px;
+            height: 30px;
+
+
+        }
+
+        .line01 {
+            /* border: 3px dashed #000;
+            height: 3px;
+            width: 10px; */
+        }
+
+        .line02 {
+            /* border: 3px dashed #000;
+            height: 3px;
+            width: 10px; */
+        }
+
+        .line03 {
+            /* border: 3px dashed #000;
+            height: 3px;
+            width: 10px; */
+        }
+
+        @media screen and (min-width:375px) {
+
+            /* 最小的寬度在375以上才會顯示 */
+            .outer_ul {}
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contianer">
+        <div class="raw">
+            <div class="menu_btn">
+                <div class="line01"></div>
+                <div class="line02"></div>
+                <div class="line03"></div>
+            </div>
+            <div class="logo"><a href=""><img src="./img/logo01.png" alt=""></a></div>
+            <ul class="outer_ul">
+                <li><a href="">about</a>
+                </li>
+                <li class="dropdown"><a href="">about</a>
+                    <ul>
+                        <li><a href="#">Magento與POS訂單系統整合</a>
+                        </li>
+                        <li><a href="#">Magento與CRM客戶管理系統整合</a>
+                        </li>
+                        <li><a href="#">Magento與ERP管理系統整合</a>
+                        </li>
+                        <li><a href="#">Magento金流串接服務</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">about</a>
+                </li>
+                <li><a href="">about</a>
+                </li>
+                <li><a href="">about</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

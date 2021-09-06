@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>text</title>
+    <style>
+        /* ----///標簽的屬性及樣式的介紹///---- */
+        /* 鋼針效果： */
+        .hr1 {
+            width: 80%;
+            size: 3px;
+            color: #5151A2;
+            filter: "progid:DXImageTransform.Microsoft.Glow(color=#5151A2,strength=10)";
+        }
+
+        /* 兩頭漸變透明： */
+        .hr2 {
+            width: 80%;
+            size: 3px;
+            color: #5151A2;
+            filter: "alpha(opacity=100,finishopacity=0,style=3)";
+
+        }
+
+        /* 畫虛線： */
+        .hr3 {
+            width: 80%;
+            size: 1px;
+            color: #5151A2;
+            border: 1px dashed #5151A2;
+
+        }
+
+        /* 畫雙線： */
+        .hr4 {
+            width: 80%;
+            size: 3px;
+            color: #5151A2;
+            border: 3px double green;
+
+        }
+
+        /* 立體效果： */
+        .hr5 {
+            width: 80%;
+            size: 3px;
+            color: #5151A2;
+            filter: progid:DXImageTransform.Microsoft.Shadow(color#5151A2, direction:145, st);
+
+        }
+
+        /* 紡棰形： */
+        .hr6 {
+            width: 80%;
+            size: 30px;
+            color: #5151A2;
+            filter: alpha(opacity=100, finishopacity=0, style=2);
+
+        }
+
+        .hr7 {
+            width: 80%;
+            align: left;
+            border: 4px double #ff0000;
+
+        }
+
+        /* flex-flow屬性是flex-direction和flex-wrap屬性的複合屬性。
+
+        flex-flow屬性用於設置或檢索彈性盒模型對象的子元素劃分方式。
+
+        flex-direction屬性規定靈活項目的方向。
+
+        flex-wrap屬性規定靈活項目是否拆行或拆列。
+
+        注意：如果元素不是彈性盒對象的元素，則flex-flow屬性不起作用。 */
+
+
+        /* flex-flow屬性的值:的值:
+        nowrap	默认值。规定灵活的项目不拆行或不拆列。
+        wrap	规定灵活的项目在必要的时候拆行或拆列。
+        wrap-reverse	规定灵活的项目在必要的时候拆行或拆列，但是以相反的顺序。
+        initial	设置该属性为它的默认值。请参阅 initial。
+        inherit	从父元素继承该属性。请参阅 inherit。 */
+
+
+        /* row	默认值。灵活的项目将水平显示，正如一个行一样。	
+        row-reverse	与 row 相同，但是以相反的顺序。	
+        column	灵活的项目将垂直显示，正如一个列一样。	
+        column-reverse	与 column 相同，但是以相反的顺序。	
+        initial	设置该属性为它的默认值。请参阅 initial。	
+        inherit	从父元素继承该属性。请参阅 inherit。 */
+
+        /* zoom:2;是設置或檢索對象的縮放比例 */
+
+
+        /* outline:輪廓線顏色 輪廓線樣式 輪廓線粗細; */
+        /* vertical-align: baseline; */
+        /* vertical-align指定行內元素（內聯）或表格單元格（table-cell）元素的垂直對齊方式。 */
+
+        /* background:transparent;圖片背景消除 */
+        /* opacity: 0.5;透明圖像(該opacity屬性的取值範圍為0.0-1.0) */
+        /* letter-spacing 字元間距控制 (每個字之間的距離控制)
+        word-spacing 單字間距控制 (每個單字之間空白區的大小控制)
+        white-space 空白區域處理 */
+
+
+        /* @[word-break: 文字斷行效果;]
+        normal:預設值，根據瀏覽器預設的斷行效果。
+        keep-all:不可以在單字的字母換行，必須保留完整單字，例如遇到半形空格才能換行。
+        break-all:可以在單字的字母換行，不一定要完整單字才能換行。
+        initial: 將 word-break 屬性設為預設值。
+        inherit :繼承自父層的 word-break 屬性設定。 */
+
+        /* flex-wrap: wrap;決定超過容器寬度的時候是否要換行。 */
+    </style>
+</head>
+
+<body>
+    <h2>
+        <hr />標簽的屬性及樣式的介紹網址:
+    </h2>
+    <a href="http://www.divcss.online/divcssbuju/cssrumen/csstxdm/201612/58513.html">
+        http://www.divcss.online/divcssbuju/cssrumen/csstxdm/201612/58513.html</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><span>ABOUT</span>
+                        <hr class="hr1">
+                    </a>
+                </li>
+                <!-- <span class="sr-only">(current)</span> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link
+                        <hr class="hr2">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link
+                        <hr class="hr3">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link
+                        <hr class="hr4">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link
+                        <hr class="hr5">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link
+                        <hr class="hr6">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link
+                        <hr class="hr7">
+                    </a>
+                </li>
+        </div>
+    </nav>
+
+
+    </ul>
+    <section>
+        <h2>position文字定位:</h2>
+        <a href="http://jendo.org/files/doc/div.html">http://jendo.org/files/doc/div.html</a>
+
+        <h2>vertical-align指定行內元素（內聯）或表格單元格（table-cell）元素的垂直對齊方式:</h2>
+        <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align">
+            https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align</a>
+
+        <h2>讓表頭header固定在上面的CSS語法:</h2>
+        <h3>
+            position:fixed;<br>
+            top: 0;<br>
+            left: 0;<br>
+            z-index: 999;
+        </h3><br>
+
+        <h2>讓區塊水平垂直置中 的語法:</h2>
+        <h3>
+            display: flex;<br>
+            /* display: flex;水平橫向 */ <br>
+            align-items: center; <br>
+            /* align-items: center;垂直置中 */ <br>
+        </h3><br>
+
+        <h2>flex-wrap 屬性介紹網址:</h2>
+        <a href="https://w3c.hexschool.com/flexbox/4ed6ec22">
+            https://w3c.hexschool.com/flexbox/4ed6ec22</a>
+
+        <h2>align-items 屬性介紹:主要以交錯軸線來做排版</h2>
+        <a href="https://w3c.hexschool.com/flexbox/87d66dc4">
+            https://w3c.hexschool.com/flexbox/87d66dc4</a>
+        <br>
+        <h2>/* column-count: 4; */
+            /* column-count自動切割 */=>欄位</h2>
+        <br><br>
+        <p>/* flex-flow屬性是flex-direction和flex-wrap屬性的複合屬性。<br>
+
+            flex-flow屬性用於設置或檢索彈性盒模型對象的子元素劃分方式。<br>
+
+            flex-direction屬性規定靈活項目的方向。<br>
+
+            flex-wrap屬性規定靈活項目是否拆行或拆列。<br>
+
+            注意：如果元素不是彈性盒對象的元素，則flex-flow屬性不起作用。 */<br>
+
+            <br>
+            /* flex-flow屬性的值:的值:<br>
+            nowrap 默认值。规定灵活的项目不拆行或不拆列。<br>
+            wrap 规定灵活的项目在必要的时候拆行或拆列。<br>
+            wrap-reverse 规定灵活的项目在必要的时候拆行或拆列，但是以相反的顺序。<br>
+            initial 设置该属性为它的默认值。请参阅 initial。<br>
+            inherit 从父元素继承该属性。请参阅 inherit。 */<br>
+
+            <br>
+            /* row 默认值。灵活的项目将水平显示，正如一个行一样。<br>
+            row-reverse 与 row 相同，但是以相反的顺序。 <br>
+            column 灵活的项目将垂直显示，正如一个列一样。<br>
+            column-reverse 与 column 相同，但是以相反的顺序。<br>
+            initial 设置该属性为它的默认值。请参阅 initial。<br>
+            inherit 从父元素继承该属性。请参阅 inherit。 */<br>
+
+            /* zoom:2;是設置或檢索對象的縮放比例 */<br>
+            <br>
+
+            /* outline:輪廓線顏色 輪廓線樣式 輪廓線粗細; */<br>
+            /* vertical-align: baseline; */<br>
+            /* vertical-align指定行內元素（內聯）或表格單元格（table-cell）元素的垂直對齊方式。 */<br>
+            <br>
+            /* background:transparent;圖片背景消除 */<br>
+            /* opacity: 0.5;透明圖像(該opacity屬性的取值範圍為0.0-1.0) */<br>
+            /* letter-spacing 字元間距控制 (每個字之間的距離控制)<br>
+            word-spacing 單字間距控制 (每個單字之間空白區的大小控制)<br>
+            white-space 空白區域處理 */<br>
+
+
+            /* @[word-break: 文字斷行效果;]<br>
+            normal:預設值，根據瀏覽器預設的斷行效果。<br>
+            keep-all:不可以在單字的字母換行，必須保留完整單字，例如遇到半形空格才能換行。<br>
+            break-all:可以在單字的字母換行，不一定要完整單字才能換行。<br>
+            initial: 將 word-break 屬性設為預設值。<br>
+            inherit :繼承自父層的 word-break 屬性設定。 */<br>
+            <br>
+            /* flex-wrap: wrap;決定超過容器寬度的時候是否要換行。 */
+            <br><br>
+            /* display:block;元素的顯示型態被設定為區塊元素。 */ <br>
+            display:inline;　//元素的顯示型態被設定為內行元素。 <br>
+            <br>
+            border-collapse:separate; //預設值，邊框彼此間分開<br>
+            border-collapse:collapse; //邊框合併為單一邊框<br>
+            border-collapse:inherit; //繼承自父層的 border-collapse 屬性值。<br>
+
+        </p><br>
+        <h2>opacity屬性指定了一個元素的不透明度:</h2>
+        <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity">
+            https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity</a>
+        <br>
+        <h2>display 屬性的語法:</h2>
+        <a href="https://www.wibibi.com/info.php?tid=CSS_display_%E5%B1%AC%E6%80%A7">
+            https://www.wibibi.com/info.php?tid=CSS_display_%E5%B1%AC%E6%80%A7</a>
+        <h2>align-content屬性設置了瀏覽器如何分解彈性盒子佈局的縱軸和網格佈局的主軸在內容項之間和周圍分配空間: </h2>
+        <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content">
+            https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content</a>
+        <h2>/* text-align: center;+line-height行高跟DIV高度一樣=>自然就會在盒子的正中央了 */</h2>
+
+        <h3>/* text-justify:inter-ideograph;自動算"字跟字" 中間的空隙 來排齊內容。 */</h3>
+        <h3> letter-spacing: 0.1em;
+            /* letter-spacing字母間距 */</h3>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

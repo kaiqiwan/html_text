@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>@media query</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .amos1 {
+            background-color: chartreuse;
+        }
+
+        .amos2 {
+            background-color: chocolate;
+        }
+
+        .amos {
+            width: 100%;
+            height: 300px;
+            display: none;
+        }
+
+        /* 螢幕解析度小於768px,就不會顯示;當大於768px就會顯示"{}"的以下條件 */
+        @media screen and (min-width:768px) {
+            .amos {
+                background-color: darkcyan;
+                display: block;
+
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            .amos {
+                background-color: deeppink;
+            }
+        }
+
+        /* 如果要在手機板不要出現div區塊,可用display:none;來清除此區塊;然後在電腦螢幕板出現在打上display:block;就會出現 */
+    </style>
+</head>
+
+<body>
+    <div class="amos amos1">如果要在手機板不要出現div區塊,可用display:none;來清除此區塊;然後在電腦螢幕板出現在打上display:block;就會出現</div>
+
+
+</body>
+
+</html>

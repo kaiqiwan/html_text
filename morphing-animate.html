@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兩個圖案變形轉換moon動畫</title>
+    <defs>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: sans-serif;
+            }
+
+            .cls-1 {
+                fill: #f9cb08;
+
+            }
+
+            section {
+                height: 100vh;
+                background: rgb(199, 199, 199);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            svg {
+                cursor: pointer;
+            }
+
+            #darkMode {}
+
+            /* #moon01 {
+                width: 55px;
+                height: 55px;
+                fill: none;
+            }
+
+            #moon02 {
+                width: 28px;
+                height: 55px;
+                fill: none;
+            } */
+        </style>
+    </defs>
+</head>
+
+<body>
+    <section>
+        <h1>Dark Mode</h1>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207 207" id="darkMode" width="207px" height="207px"
+            fill="none">
+            <g id="moon01" data-name="圖層 1">
+                <circle class="cls-1 sun" cx="103.26" cy="103.26" r="103.26" />
+            </g>
+        </svg> -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207 207" id="darkMode" width="207px" height="207px"
+            fill="none">
+            <g id="moon01" data-name="圖層 1">
+                <path class="cls-1 sun" d="M 2, 100a 2,2 0 1,1 200,0a 2,2 0 1,1 -200,0" />
+            </g>
+        </svg>
+    </section>
+
+
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200px" height="400px" fill="none">
+        <g id="moon02" data-name="圖層 1">
+            <path class="cls-1"
+                d="M173.32,179.11c-6.58,6.15-32.19,27.95-70.06,27.41A103.26,103.26,0,1,1,103.26,0s-60.65,73.79-9,135.13C111.7,155.84,128.6,174.37,173.32,179.11Z" />
+        </g>
+    </svg> -->
+    <script src="./js/lib/anime.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>
+        const moonPath = "M173.32,179.11c-6.58,6.15-32.19,27.95-70.06,27.41A103.26,103.26,0,1,1,103.26,0s-60.65,73.79-9,135.13C111.7,155.84,128.6,174.37,173.32,179.11Z";
+        const sunPath = "M 2, 100a 2,2 0 1,1 200,0a 2,2 0 1,1 -200,0";
+        const darkMode = document.querySelector("#darkMode");
+        let toggle = false;
+        //we need to click on the sun我們需要點擊太陽
+        darkMode.addEventListener("click", () => {
+            //we need to use anime.js
+            //here we set up the timelinee在這裡我們設置了時間表
+            const timeline = anime.timeline({
+                duration: 750,
+                easing: "easeOutExpo"
+            });
+            //add different animations to the timeline向時間軸添加不同的動畫
+            timeline
+                .add({
+                    targets: ".sun",
+                    d: [{ value: toggle ? sunPath : moonPath }]
+                })
+                .add({
+                    targets: "#darkMode",
+                    rotate: 320
+                }, '-=350')
+                .add({
+                    targets: "section",
+                    backgroundColor: toggle ? "rgb(255,255,255)" : "rgb(22,22,22)",
+                    color: toggle ? "rgb(22,22,22)" : "rgb(255,255,255)"
+                }, '-=700');
+            //everytime we click on the sun I want that toggle to switch每次我們單擊太陽時，我都希望切換
+            if (!toggle) {
+                toggle = true;
+            } else {
+                toggle = false;
+            }
+        });
+    </script>
+</body>
+
+</html>

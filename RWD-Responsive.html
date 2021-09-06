@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD-Responsive</title>
+    <style>
+        . {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrap {
+            width: 100%;
+            min-width: 1400px;
+            /* min-width最大寬度 */
+            margin: 0 auto;
+        }
+
+        .item {
+            background-color: #ffa;
+            margin: 0px 10px 20px;
+            /* margin內距:上 ,左右 ,下  */
+            padding: 10px;
+            /* padding外距 */
+            text-align: justify;
+            /* text-align:justify; //使左右對齊本文 */
+            text-justify: inter-ideograph;
+            /* text-justify:inter-ideograph;自動算"字跟字" 中間的空隙 來排齊內容。 */
+        }
+
+        @media screen and (min-width: 768px) {
+            .wrap {
+                display: flex;
+            }
+
+            .item {
+                width: 33.3333%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <h3>title</h3>
+            <p>
+                /* text-align:justify; //使左右對齊本文 */
+                /* text-justify:inter-ideograph;自動算"字跟字" 中間的空隙 來排齊內容。 */</p>
+        </div>
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a facere explicabo quod consequuntur
+                porro dolores illum quas sit eligendi odit voluptatem, consequatur laborum. Officia laborum nemo
+                provident delectus beatae.</p>
+        </div>
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate a facere explicabo quod consequuntur
+                porro dolores illum quas sit eligendi odit voluptatem, consequatur laborum. Officia laborum nemo
+                provident delectus beatae.</p>
+        </div>
+    </div>
+</body>
+
+</html>

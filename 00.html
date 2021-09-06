@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用style.display的值來做判斷,是否要顯示</title>
+</head>
+
+<body>
+    <div id="listBtn" onclick="listBtn()">秀出來</div>
+    <div id="textlistn" style="display:none;">
+        Hello IT邦
+    </div>
+    <script>
+        function listBtn() {
+            var listBtn = document.getElementById('listBtn');
+            var textlistn = document.getElementById('textlistn');
+            if (textlistn.style.display === 'none') {
+                textlistn.style.display = 'block';
+                listBtn.innerText = "隱藏";
+            } else {
+                textlistn.style.display = 'none';
+                listBtn.innerText = "秀出來";
+            }
+        }
+    </script>
+</body>
+
+</html>

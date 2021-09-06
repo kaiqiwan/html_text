@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求籤動畫</title>
+    <style>
+        /* 抽籤內文*/
+        .content-textB2 {
+            text-decoration: none;
+            font-size: 14pt;
+            font-weight: bold;
+            color: #944309;
+            line-height: 22pt;
+        }
+
+        /* 線上抽籤 籤號*/
+        .content-textB3 {
+            font-family: "新細明體";
+            text-decoration: none;
+            font-size: 14pt;
+            font-weight: bold;
+            color: #990000;
+            line-height: 22pt;
+        }
+
+        /* 抽籤按鈕*/
+        .btn_class {
+            font-size: 16pt;
+            font-weight: normal;
+            text-decoration: none;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            background: -moz-linear-gradient(center top, #E38C09 12%, #944309 50%);
+            background: -ms-linear-gradient(top, #E38C09 12%, #944309 50%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E38C09', endColorstr='#944309');
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(12%, #E38C09), color-stop(50%, #944309));
+            background-color: #944309;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .btn_class:hover {
+            background: -moz-linear-gradient(center top, #944309 50%, #E38C09 93%);
+            background: -ms-linear-gradient(top, #944309 50%, #E38C09 93%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#944309', endColorstr='#E38C09');
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #944309), color-stop(93%, #E38C09));
+            background-color: #E38C09;
+            text-decoration: none;
+        }
+
+        .btn_class:active {
+            position: relative;
+            top: 1px;
+            text-decoration: none;
+        }
+
+        /* ------------------------ */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FBEB8C
+        }
+
+        #wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -99;
+            visibility: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            box-shadow: 0px 1px 5px #600;
+            visibility: hidden;
+        }
+
+        /*8/5 removed #hd_img{ position:absolute; top:0;box-shadow:0px 1px 5px #600 ; display:none}*/
+        #bg_put {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: -99;
+            visibility: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            font-family: "Times New Roman", 標楷體;
+            visibility: hidden;
+        }
+
+        nav ul {
+            position: relative;
+            top: -80px;
+            left: 50px;
+        }
+
+        nav ul li,
+        nav ul li a {
+            font-family: "Times New Roman", 標楷體;
+            hight: 32px;
+            list-style-type: none;
+            font-size: 20px;
+            color: #FFFFE6;
+            line-height: 32px;
+            cursor: pointer;
+            text-shadow: 0px -1px 1px #1E1E3E;
+            text-align: center;
+            display: inline-block
+        }
+
+        nav ul li a:hover {
+            color: #F9CB15;
+            box-shadow: inset 0px 0px 60px #591A0D;
+            border-radius: 2px;
+            -moz-transition: all 0.3s ease-in;
+            /* WebKit */
+            -webkit-transition: all 0.3s ease-in;
+            /* Opera */
+            -o-transition: all 0.3s ease-in;
+            /* Standard */
+            transition: all 0.3s ease-in;
+        }
+
+        .php_use {
+            color: #F9CB15;
+            box-shadow: inset 0px 0px 60px #591A0D;
+            border-radius: 2px;
+            -moz-transition: all 0.3s ease-in;
+            /* WebKit */
+            -webkit-transition: all 0.3s ease-in;
+            /* Opera */
+            -o-transition: all 0.3s ease-in;
+            /* Standard */
+            transition: all 0.3s ease-in;
+        }
+
+        nav ul li a:active {
+            text-shadow: 1px 1px 1px #1E1E3E;
+            -moz-transition: none;
+            /* WebKit */
+            -webkit-transition: none;
+            /* Opera */
+            -o-transition: none;
+            /* Standard */
+            transition: none;
+        }
+
+        section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        article {
+            width: 930px;
+            position: relative;
+            top: 170px;
+        }
+
+        p {
+            text-indent: 2em;
+            letter-spacing: 2px;
+            padding-bottom: 1em;
+            text-align: justify;
+            text-justify: distribute;
+        }
+
+        .nav_b {
+            font-family: "Times New Roman", 標楷體;
+            width: 130px;
+            height: 40px;
+            white-space: nowrap;
+            font-weight: bold;
+            text-align: center;
+            color: #A60409;
+            text-shadow: 1px 1px 1px #000, -1px -1px 1px #FFF;
+            cursor: pointer;
+        }
+
+        .nav_b:hover,
+        .wds_sty:active {
+            font-weight: bold;
+            text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;
+            background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* FF3.6+ */
+            background: -webkit-gradient(radial, center center, 0px, center center, 80%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0)));
+            /* Chrome,Safari4+ */
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* Opera 12+ */
+            background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* IE10+ */
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+        }
+
+        .nav_b_php {
+            /*not yet*/
+            font-weight: bold;
+            text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;
+            background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* FF3.6+ */
+            background: -webkit-gradient(radial, center center, 0px, center center, 80%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0)));
+            /* Chrome,Safari4+ */
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* Opera 12+ */
+            background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* IE10+ */
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+        }
+
+        .nav_menu_jq {
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #000, -1px -1px 2px #FFF background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* FF3.6+ */
+            background: -webkit-gradient(radial, center center, 0px, center center, 80%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(80%, rgba(255, 255, 255, 0)));
+            /* Chrome,Safari4+ */
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* Opera 12+ */
+            background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%);
+            /* IE10+ */
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+        }
+
+        .nav_b:active {
+            text-shadow: 1px 1px 1px #000, -1px -1px 2px #FFF;
+        }
+
+        #fb_blk {
+            width: 60px;
+            height: 50px;
+            position: absolute;
+            float: right;
+            position: fixed;
+            right: -10px;
+            background: #009;
+            line-height: 55px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            cursor: pointer;
+            box-shadow: 5px 2px 7px #009;
+            z-index: 3;
+        }
+
+        #twtr_blk {
+            width: 60px;
+            height: 50px;
+            position: absolute;
+            float: right;
+            position: fixed;
+            right: -10px;
+            background: #09F;
+            line-height: 60px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            cursor: pointer;
+            box-shadow: 5px 2px 7px #009;
+            z-index: 3;
+        }
+
+        #glg_blk {
+            width: 60px;
+            height: 50px;
+            position: absolute;
+            float: right;
+            position: fixed;
+            right: -10px;
+            background: #D3170E;
+            line-height: 60px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            cursor: pointer;
+            box-shadow: 5px 2px 7px #009;
+            z-index: 3;
+        }
+
+        #fb_blk:hover,
+        #twtr_blk:hover,
+        #glg_blk:hover {
+            right: 0px;
+            transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+            /* WebKit */
+            -webkit-transition: all 0.3s ease-in;
+            /* Opera */
+            -o-transition: all 0.3s ease-in;
+            /* Standard */
+        }
+
+        footer {
+            box-shadow: 0px 0px 10px #C65E15;
+            padding-top: 10px;
+            padding-bottom: 50px;
+            background: rgb(198, 94, 21);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(198, 94, 21, 1) 0%, rgba(170, 27, 1, 1) 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(198, 94, 21, 1)), color-stop(100%, rgba(170, 27, 1, 1)));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(198, 94, 21, 1) 0%, rgba(170, 27, 1, 1) 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(198, 94, 21, 1) 0%, rgba(170, 27, 1, 1) 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(198, 94, 21, 1) 0%, rgba(170, 27, 1, 1) 100%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, rgba(198, 94, 21, 1) 0%, rgba(170, 27, 1, 1) 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c65e15', endColorstr='#aa1b01', GradientType=0);
+            /* IE6-9 */
+        }
+
+        /*End base*/
+
+        .tittle_one {
+            font-size: 24px;
+            font-weight: bold;
+            color: #660000;
+            line-height: 24px;
+        }
+
+        .tittle_two {
+            font-size: 22px;
+            color: #02407E;
+            font-weight: bold;
+        }
+
+        /*節*/
+        .blue_cmte_sm {
+            font-size: 18px;
+            color: #234E7A;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* 感言(關於) etc ... */
+
+        /*Link for news album*/
+        /*2015/6/22新增 a 連結樣式*/
+        .a_no_tran {
+            color: #337ab7;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .a_no_tran:hover {
+            text-decoration: underline;
+        }
+
+        /*firespot*/
+        #spot_fire {
+            width: 45px;
+            height: 48px;
+            position: absolute;
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content_0"
+        style="width:830px; height:325px; background-image:url(./img/求籤/bdr_for_draw.png); background-size:contain; background-repeat:no-repeat;margin-left:auto; margin-right:auto;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bdr_for_draw.png', sizingMethod='scale'); ">
+        <div style=" position:relative; top:27px; left:70px;"><img src="./img/求籤/static_fortune.png" width="160"></div>
+        <div class="content-textB2"
+            style=" position:relative; top:-220px; left:310px;width:450px; height:200px; text-align:justify;">
+            請虔誠地在心中默念您的姓名、出生年月日、住址後，誠心祈求城隍爺，指點迷津，將您心中想請教的事情詳細說明後，再點選"開始求籤"按鈕進行線上求籤。</div>
+        <div class="btn_class" id="draw" style="cursor:pointer; position:relative; top:-250px; left:470px;"
+            onClick="drawit('0');">開始求籤</div>
+    </div>
+    <!-- /1 -->
+    <!-- 2 -->
+    <div id="sharkit"
+        style="width:830px; height:325px; background-image:url(./img/求籤/bdr_for_draw.png);background-size:contain; background-repeat:no-repeat;margin-left:auto; margin-right:auto; display:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bdr_for_draw.png', sizingMethod='scale');">
+        <div style=" position:relative; top:27px; left:335px;"><img src="./img/求籤/run_fortune.gif" width="160"></div>
+    </div>
+    <!-- /2 -->
+    <!-- 3 -->
+    <div id="content_1"
+        style="width:830px; height:325px; background-image:url(./img/求籤/bdr_for_draw.png); background-size:contain; background-repeat:no-repeat;margin-left:auto; margin-right:auto; display:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bdr_for_draw.png', sizingMethod='scale'); ">
+        <div id="cyc_draw" style=" position:relative; top:60px; left:60px;"><img src="./img/求籤/a_act_draw.gif"
+                width="190"></div>
+        <div style=" height:20px;position:relative; top:-120px; left:146px;"><span id="luckyid_1" class="tabletitle"
+                style=" display:none;">&nbsp;&nbsp;</span></div>
+        <div class="content-textB3" style=" position:relative;top:-170px; left:480px;width:450px; height:200px;">你抽到
+            第<span id="luckyid">&nbsp;&nbsp;1&nbsp;&nbsp;</span>籤</div>
+        <div class="content-textB2" style=" position:relative; top:-310px; left:380px;width:450px; height:200px;">
+            請點選"擲筊"按鈕向城隍爺確認賜籤。</div>
+        <!-- onClick="slotit();"按鈕 -->
+        <div class="btn_class" id="slot" onClick="slotit();"
+            style="cursor:pointer; position:relative; top:-430px; left:505px;display:none;">擲筊</div>
+    </div>
+    <!-- /3 -->
+    <!-- 4 -->
+    <div id="content_2"
+        style="width:830px; height:325px; background-image:url(./img/求籤/bdr_for_draw.png); background-size:contain; background-repeat:no-repeat;margin-left:auto; margin-right:auto; display:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bdr_for_draw.png', sizingMethod='scale');">
+        <!-- slotresult筊杯結果的圖片 -->
+        <div id="slotresult" style=" position:relative; top:60px; left:60px;"><img src="./img/求籤/even.png" width="190">
+        </div>
+        <!-- result_title取得筊杯結果文字 -->
+        <div class="content-textB3" id="result_title" style="position:relative; top:-120px; left:530px;">陰筊</div>
+        <!-- result_txt取得筊杯結果的文字敘述 -->
+        <div class="content-textB2" id="result_txt"
+            style=" position:relative;top:-110px; left:450px;width:450px; height:200px;">求籤失敗，請重新求籤。</div>
+        <!-- draw_again取得筊杯結果 的按鈕 -->
+        <div class="btn_class" id="draw_again" style="cursor:pointer; position:relative; top:-200px; left:490px;"
+            onClick="drawit();">重新求籤</div>
+        <!-- gogetit取得詩籤結果的按鈕 -->
+        <div class="btn_class" id="gogetit"
+            style="cursor:pointer; position:relative; top:-200px; left:490px; display:none;" onClick="gotit('1');">看籤詩解
+        </div>
+    </div>
+    <!-- /4 -->
+    </div>
+    <script>
+
+        function drawit(pt) {
+            var lucky_num = 1;
+            lucky_num = Math.floor(Math.random() * 60 + 1);
+            // Math.floor() 函式會回傳小於等於所給數字的最大整數。
+            // Math.random()取得某區間內的隨機亂數
+            $("#luckyid").text(lucky_num.toString());
+            // toString()將數字轉換為字符串
+            $("#luckyid_1").delay(4000).fadeIn(500).text(lucky_num.toString());
+            // fadeIn()淡出效果
+            // text("把要改變的內容打在這裡")
+            $("#content_0").css("display", "none");
+            if (pt == '0') {
+                $("#sharkit").fadeIn(500).css("display", "block");
+                // fadeIn()淡出效果
+                window.setTimeout("sharkit()", 2100);
+                // setTimeout（）方法將在指定的毫秒數後調用一個函數或對一個表達式求值
+            } else {
+                sharkit();
+            }
+
+        }
+        function sharkit() {
+            $("#sharkit").css("display", "none");
+            $("#content_1").fadeIn(1000).css("display", "block");
+            $("#cyc_draw img").attr("src", "images/a_act_draw.gif");
+            $("#content_2").css("display", "none");
+            $("#draw").css("display", "none");
+            $("#slot").show();
+            $("#gogetit").css("display", "none");
+        }
+        function gotit() {
+            location.href = "fortune.php?ans=" + $("#luckyid").html();
+        }
+        // slotit()自己命名的按鈕變數
+        function slotit() {
+            var slot_num = 1;
+            $("#content_2").fadeIn(800).css("display", "block");
+            $("#content_1").css("display", "none");
+            slot_num = Math.floor(Math.random() * 4);
+            // Math.floor() 函式會回傳小於等於所給數字的最大整數。
+            // Math.random()取得某區間內的隨機亂數
+            if (slot_num == 0) {
+                // slotresult取得筊杯結果的圖片位置
+                jQuery("#slotresult").attr("src", "./img/求籤/no.png")
+                // jQuery()返回匹配元素的集合，這些元素基於傳遞的參數在DOM中找到，或者通過傳遞HTML字符串創建
+                $("#draw_again").show();//draw_again取得筊杯結果 的按鈕 
+                $("#slot").css("display", "none");//slot取得抽籤完按鈕的ID
+                $("#gogetit").css("display", "none");//gogetit取得詩籤結果的按鈕
+                $("#result_title").text("陰筊");//取得筊杯結果文字
+                $("#result_txt").text("求籤失敗，請重新求籤");//result_txt取得筊杯結果的文字敘述
+
+            } else if (slot_num > 2) {
+                jQuery("#slotresult").attr("src", "./img/求籤/even.png")
+                $("#draw_again").show();
+                // show()如果被選元素已被隱藏，則顯示這些元素
+                $("#slot").css("display", "none");
+                $("#gogetit").css("display", "none");
+                $("#result_title").text("笑筊");
+                $("#result_txt").text("求籤失敗，請重新求籤");
+
+            } else {
+                jQuery("#slotresult").attr("src", "./img/求籤/yes.png")
+                // attr() 方法設置或返回被選元素的屬性值;可改變圖像
+                $("#result_title").text("聖筊");
+                $("#result_txt").text("求籤成功，請領取籤詩");
+                $("#draw_again").css("display", "none");
+                $("#slot").css("display", "none");
+                $("#gogetit").show();
+            }
+        }
+
+
+
+        //$("#sharkit").css("disp")
+
+    </script>
+</body>
+
+</html>

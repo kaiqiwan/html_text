@@ -1,0 +1,379 @@
+/* *****************************************************************************
+�～�扎�喋�瓐�詻�乓�Ｕ��
+***************************************************************************** */
+#mainvisual {
+	min-height:60.73vw;
+	margin-bottom:125px;
+	position:relative;
+}
+#visual_arrow {
+	position:absolute;
+	bottom:160px;
+	left:50%;
+	z-index:10;
+}
+#visual_arrow img{
+	margin-left:-6px;
+}
+#visual_logo {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	display:table;
+	z-index:10;
+}
+#visual_logo > span {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+#visual_logo > span > span{
+	display:inline-block;
+	width:317px;
+	height:143px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:100%;
+	background-image:url(/images/common/logo_l_white.svg);
+}
+
+/* *****************************************************************************
+�硔�押�喋��
+***************************************************************************** */
+#section_brand {
+	padding-top:60px;
+	margin-bottom:95px;
+}
+
+#section_brand h1{
+	text-align:center;
+	font-size:22px;
+	margin-bottom:30px;
+	letter-spacing:0.2em;
+}
+#section_brand p{
+	width:705px;
+	margin:auto;
+	line-height:1.9;
+}
+
+
+
+/* *****************************************************************************
+�𨰜�准���胯��
+***************************************************************************** */
+#section_product {
+	padding-top:60px;
+	margin-bottom:75px;
+}
+#section_product .section_header {
+	margin-bottom:105px;
+}
+#section_product .section_header img{
+	width:100%;
+}
+#section_product .section_body{
+	width:864px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#section_product h1{
+	text-align:center;
+	margin-bottom:50px;
+}
+#section_product ul {
+	list-style-type:none;
+}
+#section_product li {
+	float:left;
+	width:268px;
+	margin-right:30px;
+	margin-bottom:45px;
+}
+#section_product li:nth-child(3n) {
+	margin-right:0px;
+}
+#section_product a {
+	display:block;
+	color:#333;
+}
+#section_product  span{
+	display:block;
+}
+#section_product .entry_thumbnail {
+	margin-bottom:7px;
+}
+#section_product .btn_more {
+	padding-top:15px;
+}
+
+
+
+/* *****************************************************************************
+NEWS
+***************************************************************************** */
+#section_news {
+	padding-top:60px;
+	margin-bottom:20px;
+}
+#section_news h1 {
+	margin-bottom:75px;
+}
+#section_news ul{
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+	list-style-type:none;
+}
+#section_news li{
+	width:240px;
+	margin-right:30px;
+	margin-bottom:30px;
+	float:left;
+}
+#section_news li:nth-child(3n){
+	margin-right:0px;
+}
+#section_news li a{
+	display:block;
+	background-color:#191919;
+	color:#fff;
+	line-height:1;
+	font-size:22px;
+	text-align:center;
+	padding:1em;
+}
+#section_news p {
+	text-align:center;
+	font-size:0.9375rem;
+}
+
+
+
+
+/* *****************************************************************************
+OEM
+***************************************************************************** */
+#section_oem .section_header {
+	padding-top:60px;
+	margin-bottom:150px;
+}
+#section_oem .section_header img {
+	width:100%;
+}
+#section_oem .section_body,
+#section_workshop .section_body {
+	width:880px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:135px;
+	position:relative;
+}
+#section_oem .section_body h1,
+#section_workshop .section_body h1{
+	width:365px;
+	float:right;
+	border-bottom:solid 1px #7f7f7f;
+	margin-top:-0.3em;
+	margin-bottom:30px;
+	ilne-height:1;
+}
+
+#section_oem .section_left,
+#section_workshop .section_left {
+	width:464px;
+	float:left;
+}
+#section_oem .section_right,
+#section_workshop .section_right {
+	width:365px;
+	float:right;
+}
+#section_oem .section_body p,
+#section_workshop .section_body p{
+	font-size:0.9375rem;
+}
+#section_oem .btn_more,
+#section_workshop .btn_more {
+	width:365px;
+	position:absolute;
+	right:0px;
+	bottom:0px;
+}
+
+
+
+
+
+/* *****************************************************************************
+********************************************************************************
+
+�Ｕ�僐�扎��
+
+********************************************************************************
+***************************************************************************** */
+@media screen and (max-width: 750px)  {
+
+	article {
+		margin-bottom:30vw;
+	}
+
+	/* *****************************************************************************
+	�～�扎�喋�瓐�詻�乓�Ｕ��
+	***************************************************************************** */
+	header {
+		height:0vw;
+		overflow:hidden;
+	}
+	#mainvisual {
+		margin-bottom:21.5vw;
+	}
+	#mainvisual .disp_sp img{
+		width:100%;
+		
+	}
+	#visual_logo > span > span{
+		display:inline-block;
+		width:55vw;
+		height:24.81vw;
+	}
+
+	/* *****************************************************************************
+	�硔�押�喋��
+	***************************************************************************** */
+	#section_brand {
+		padding-top:0vw;
+		margin-bottom:20vw;
+	}
+	#section_brand h1{
+		font-size:5vw;
+	}
+	#section_brand p {
+		width:85%;
+	}
+	/* *****************************************************************************
+	�𨰜�准���胯��
+	***************************************************************************** */
+	#section_product {
+		padding-top:0vw;
+		margin-bottom:21vw;
+	}
+	#section_product .section_header {
+		margin-bottom:13vw;
+	}
+	#section_product .section_body{
+		width:85%;
+	}
+	#section_product h1{
+		margin-bottom:8vw;
+	}
+	#section_product li {
+		float:left;
+		width:47.5%;
+		margin-right:0px;
+		margin-bottom:6vw;
+	}
+	#section_product li:nth-child(2n) {
+		float:right;
+	}
+	#section_product .entry_thumbnail {
+		margin-bottom:1vw;
+	}
+	#section_product .entry_thumbnail img{
+		width:100%;
+	}
+	#section_product .btn_more {
+		padding-top:5vw;
+	}
+
+
+	/* *****************************************************************************
+	NEWS
+	***************************************************************************** */
+	#section_news {
+		padding-top:0vw;
+		margin-bottom:14vw;
+	}
+	#section_news h1 {
+		margin-bottom:10vw;
+	}
+	#section_news ul{
+		width:85%;
+		margin-bottom:2em;
+	}
+	#section_news li{
+		width:100%;
+		margin-right:0px;
+		margin-bottom:4vw;
+		float:none;
+	}
+	#section_news li a{
+		font-size:3.86vw;
+		padding:1.4em 0 1.2em 0;
+	}
+	#section_news p {
+		font-size:3vw;
+	}
+
+	/* *****************************************************************************
+	OEM
+	***************************************************************************** */
+	#section_oem .section_header {
+		padding-top:0vw;
+		margin-bottom:19vw;
+	}
+	#section_oem .section_header img {
+		width:100%;
+	}
+	#section_oem .section_body{
+		width:85%;
+		margin-bottom:18vw;
+	}
+	#section_workshop .section_body {
+		width:85%;
+		margin-bottom:0vw;
+	}
+	#section_oem .section_body h1,
+	#section_workshop .section_body h1{
+		width:100%;
+		float:none;
+		border-bottom:none;
+		margin-top:0em;
+		margin-bottom:4vw;
+		text-align:center;
+	}
+	#section_oem .section_left,
+	#section_workshop .section_left {
+		width:100%;
+		float:none;
+		margin-bottom:5vw;
+	}
+	#section_oem .section_left img,
+	#section_workshop .section_left img {
+		width:100%;
+	}
+	#section_oem .section_right,
+	#section_workshop .section_right {
+		width:100%;
+		float:none;
+	}
+	#section_oem .section_body p,
+	#section_workshop .section_body p{
+		font-size:3.2vw;
+		margin-bottom:5vw;
+	}
+	#section_oem .btn_more,
+	#section_workshop .btn_more {
+		width:100%;
+		position:static;
+		right:auto;
+		bottom:auto;
+	}
+
+
+
+}
+
+
